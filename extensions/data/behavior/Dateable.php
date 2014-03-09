@@ -104,7 +104,8 @@ class Dateable extends \lithium\core\StaticObject {
 		}
 
 		if (is_a($database, 'lithium\data\source\MongoDb')) {
-			$index = array('name' => 'li3_dateable') + $options['include'] + $updated + $created;
+			//$index = array('name' => 'li3_dateable') + $options['include'] + $updated + $created;
+      $index = array() + $options['include'] + $updated + $created;
 			$collection = $meta['source'];
 			unset($options['include']);
 			$database->connection->{$collection}->ensureIndex($index, $options);
